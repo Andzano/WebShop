@@ -1,2 +1,2 @@
-# Excelshop
-Excelshop - Team 3
+# ExcelShop
+ExcelShop - Team 3
