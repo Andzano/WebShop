@@ -1,6 +1,5 @@
 Attribute VB_Name = "Login"
 Public Sub Login()
-'    MsgBox ("Login")
     Verify
 End Sub
 
@@ -15,39 +14,36 @@ Private Sub Verify()
 End Sub
 
 Public Sub ReadFile(Username, Password As String)
-
-    Dim EncryptPassword As String
-
-    EncryptPassword = Encrypt.encription("triofro", False, "abcdef")
-'    MsgBox EncryptPassword & "after encryption"
-    
-    User = ""
-'    Dim FilePath As String
-'    FilePath = ThisWorkbook.Path & "\login.txt"
+    Dim EncryptedPassword As String
+    EncryptedPassword = Encrypt.encription(Password, False, "abcdef")
+    User = False
     Open ThisWorkbook.Path & "\login.txt" For Input As #1
     Do While Not EOF(1)
         Line Input #1, nameandpass
-        userInfo = Split(nameandpass, " ")
+        userInfo = Split(nameandpass, "/")
         
-'        MsgBox userInfo(0)
-'        MsgBox Username
-        
-'        MsgBox userInfo(1)
-'        MsgBox EncryptedPassword
-'        Dim DatabasePassword As String
-'        DatabasePassword = userInfo(1)
         If userInfo(0) = Username Then
             If userInfo(1) = EncryptedPassword Then
                 User = userInfo(0)
+                User = True
             End If
-'            User = userInfo(0)
-'            MsgBox ("Login successful")
         End If
     Loop
-'   TODO what happend when no user is found
-    If User = "" Then
-'        MsgBox ("User Not Found")
-    End If
     Close #1
+    
+    If User = False Then
+        LoginForm.Label2.ForeColor = RGB(255, 0, 0)
+        LoginForm.Label2.Caption = "Incorrect UserName/Password"
+        LoginForm.Label2.Visible = True
+    Else
+        LoginForm.Hide
+        Catalog.Show
+    End If
+    
+    If Username = "root" And Password = "root" Then
+        LoginForm.Hide
+        Catalog.Import.Visible = True
+        Catalog.Show
+    End If
 End Sub
 

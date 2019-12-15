@@ -14,6 +14,9 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub Cancel_Click()
+    LoginForm.Label2.Visible = False
+    LoginForm.UsernameBox.Value = ""
+    LoginForm.PasswordBox.Value = ""
     RegisterForm.Hide
     LoginForm.Show
 End Sub

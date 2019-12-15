@@ -79,11 +79,12 @@ Public Sub test()
     Dim Encrypt As String
     Dim Decrypt As String
 
-    Encrypt = encription("triofro", False, "abcdef")
+    Encrypt = encription(",./;'[]\_-=+~`", False, "abcdef")
+' TODO use / for seperation, since it doesnt cript, also keep a list of symbols it doesnt encrypt
 
-    MsgBox Encrypt & "O"
+    MsgBox Encrypt
 
     Decrypt = encription(Encrypt, True, "abcdef")
 
-    MsgBox Decrypt & "/"
+    MsgBox "/" & Decrypt & "/"
 End Sub

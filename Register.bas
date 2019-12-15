@@ -1,18 +1,17 @@
 Attribute VB_Name = "Register"
 Public Sub Register()
-'    MsgBox ("Register")
-' TODO izveidot funkciju kas parbauda vai lietotaajs neeksistee
     LoginForm.Hide
+    RegisterForm.Message.Visible = False
     RegisterForm.Show
 End Sub
 
 Public Sub SetRegister()
-'    MsgBox ("Register")
 
     Dim Password As String
         
     Username = RegisterForm.Username
     Password = RegisterForm.Password
+    RPassword = RegisterForm.RPassword
     Name = RegisterForm.PersonName
     Surname = RegisterForm.Surname
     PersonalCode = RegisterForm.PerosonalCode
@@ -20,12 +19,22 @@ Public Sub SetRegister()
     Address = RegisterForm.Address
     Email = RegisterForm.Email
     
-'    MsgBox Password & "BEfore calling registeruser"
     
-    Call RegisterUser(Username, Password, Name, Surname, PersonalCode, City, Address, Email)
+    If Password = RPassword Then
+        Call RegisterUser(Username, Password, Name, Surname, PersonalCode, City, Address, Email)
+        RegisterForm.Hide
+        LoginForm.Label2.ForeColor = RGB(0, 255, 0)
+        LoginForm.Label2.Caption = "User Registered"
+        LoginForm.Label2.Visible = True
+        LoginForm.Show
+    End If
     
-    RegisterForm.Hide
-    LoginForm.Show
+    If Password <> RPassword Then
+        RegisterForm.Message.ForeColor = RGB(255, 0, 0)
+        RegisterForm.Message.Caption = "Passwords must match"
+        RegisterForm.Message.Visible = True
+    End If
+
     
 End Sub
 
@@ -34,11 +43,10 @@ Private Sub RegisterUser(Username, Password As String, Name, Surname, PersonalCo
     Dim EncryptedPassword As String
 
     EncryptedPassword = Encrypt.encription(Password, False, "abcdef")
-'    MsgBox EncryptedPassword & "after encryption"
     
     Open ThisWorkbook.Path & "\login.txt" For Append As #1
     
-    userInfo = Username & " " & EncryptedPassword & " " & Name & " " & Surname & " " & PersonalCode & " " & City & " " & Address & " " & Email
+    userInfo = Username & "/" & EncryptedPassword & "/" & Name & "/" & Surname & "/" & PersonalCode & "/" & City & "/" & Address & "/" & Email
     
     Print #1, userInfo
     Close #1

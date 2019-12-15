@@ -28,7 +28,23 @@ Private Sub CommandButton1_Click()
 End Sub
 
 Private Sub CommandButton2_Click()
-    'Calls Register Sub in Register Module
+    RegisterForm.Username = ""
+    RegisterForm.Password = ""
+    RegisterForm.RPassword = ""
+    RegisterForm.PersonName = ""
+    RegisterForm.Surname = ""
+    RegisterForm.PerosonalCode = ""
+    RegisterForm.City = ""
+    RegisterForm.Address = ""
+    RegisterForm.Email = ""
+
     Register.Register
 End Sub
 
+Private Sub OptionButton1_Click()
+    Lang.English
+End Sub
+
+Private Sub OptionButton2_Click()
+    Lang.Latvian
+End Sub
