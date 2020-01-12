@@ -1,4 +1,7 @@
 Attribute VB_Name = "Login"
+'Global variable that can be accesses across all Modules
+Public GlobalUserData As Variant
+
 Public Sub Login()
     Verify
 End Sub
@@ -17,15 +20,18 @@ Public Sub ReadFile(Username, Password As String)
     Dim EncryptedPassword As String
     EncryptedPassword = Encrypt.encription(Password, False, "abcdef")
     User = False
+    
     Open ThisWorkbook.Path & "\login.txt" For Input As #1
     Do While Not EOF(1)
         Line Input #1, nameandpass
-        userInfo = Split(nameandpass, "/")
+        UserInfo = Split(nameandpass, "/")
         
-        If userInfo(0) = Username Then
-            If userInfo(1) = EncryptedPassword Then
-                User = userInfo(0)
-                User = True
+        If nameandpass <> "" Then
+            If UserInfo(0) = Username Then
+                If UserInfo(1) = EncryptedPassword Then
+                    GlobalUserData = UserInfo
+                    User = True
+                End If
             End If
         End If
     Loop
@@ -37,12 +43,33 @@ Public Sub ReadFile(Username, Password As String)
         LoginForm.Label2.Visible = True
     Else
         LoginForm.Hide
-        Catalog.Show
+        With Catalog
+            .BuyButton.Visible = True
+            .EditButton.Visible = False
+            .CommandButton1.Visible = True 'Profile Button
+            .CatalogMessage.Visible = True
+            .CatalogMessage.ForeColor = RGB(0, 255, 0)
+            .CatalogMessage.Caption = "Welcome, " & GlobalUserData(2) & "!"
+        End With
+            CatMod.Init
+            Catalog.Show
     End If
     
     If Username = "root" And Password = "root" Then
         LoginForm.Hide
-        Catalog.Import.Visible = True
+        Dim RootArray(1)
+        RootArray(0) = "root"
+        GlobalUserData = RootArray
+        With Catalog
+            .CommandButton1.Visible = False 'Profile Button
+            .ImportButton.Visible = True
+            .BuyButton.Visible = False
+            .EditButton.Visible = True
+            .CatalogMessage.Visible = True
+            .CatalogMessage.ForeColor = RGB(0, 0, 255)
+            .CatalogMessage.Caption = "Loged in as Admin"
+        End With
+        CatMod.Init
         Catalog.Show
     End If
 End Sub

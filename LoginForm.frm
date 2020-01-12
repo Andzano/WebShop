@@ -28,15 +28,15 @@ Private Sub CommandButton1_Click()
 End Sub
 
 Private Sub CommandButton2_Click()
-    RegisterForm.Username = ""
-    RegisterForm.Password = ""
-    RegisterForm.RPassword = ""
-    RegisterForm.PersonName = ""
-    RegisterForm.Surname = ""
-    RegisterForm.PerosonalCode = ""
-    RegisterForm.City = ""
-    RegisterForm.Address = ""
-    RegisterForm.Email = ""
+'    RegisterForm.Username = ""
+'    RegisterForm.Password = ""
+'    RegisterForm.RPassword = ""
+'    RegisterForm.PersonName = ""
+'    RegisterForm.Surname = ""
+'    RegisterForm.PerosonalCode = ""
+'    RegisterForm.City = ""
+'    RegisterForm.Address = ""
+'    RegisterForm.Email = ""
 
     Register.Register
 End Sub

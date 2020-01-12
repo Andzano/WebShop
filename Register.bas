@@ -46,8 +46,8 @@ Private Sub RegisterUser(Username, Password As String, Name, Surname, PersonalCo
     
     Open ThisWorkbook.Path & "\login.txt" For Append As #1
     
-    userInfo = Username & "/" & EncryptedPassword & "/" & Name & "/" & Surname & "/" & PersonalCode & "/" & City & "/" & Address & "/" & Email
+    UserInfo = Username & "/" & EncryptedPassword & "/" & Name & "/" & Surname & "/" & PersonalCode & "/" & City & "/" & Address & "/" & Email
     
-    Print #1, userInfo
+    Print #1, UserInfo
     Close #1
 End Sub

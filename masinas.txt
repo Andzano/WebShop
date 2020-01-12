@@ -10,7 +10,7 @@ bmw/2009/530/melna/manuala/lietota/7999
 bmw/2015/320/balta/manuala/lietota/10500
 bmw/1995/328/zila/manuala/lietota/1059
 bmw/2006/530/melna/automats/lietota/6390
-bmw/2007/530/melna/automats/lietota/6200
+bmw/2007/530/melna/automats/lietota/6200/hidroo/i-on,(o /Andrejs/Freiss/090197/Saldus/Veidenbauma/hobijs3@inbox.lv
 bmw/2019/x7/melna/automats/jauna/94520
 toyota/2002/rav 4/melna/manuala/lietota/3200
 toyota/2002/corolla verso/zala/manuala/lietota/1700
@@ -19,7 +19,7 @@ toyota/2007/corolla verso/melna/manuala/lietota/3990
 toyota/2005/corolla verso/zala/manuala/lietota/2790
 toyota/2007/corolla verso/sudraba/manuala/lietota/2550
 toyota/2019/camry/balta/automats/jauna/35700
-mercedes/2005/e220/melna/automats/lietota/4200
+mercedes/2005/e220/melna/automats/lietota/4200/hidroo/i-on,(o /Andrejs/Freiss/090197/Saldus/Veidenbauma/hobijs3@inbox.lv
 mercedes/1999/a160/sudraba/manuala/lietota/640
 mercedes/1999/e300/sudraba/automats/lietota/1350
 mercedes/2006/s500/melna/automats/lietota/9900
@@ -30,5 +30,10 @@ volvo/2005/v50/melna/manuala/lietota/1950
 volvo/2011/v70/melna/manuala/lietota/6999
 volvo/2019/s60/melna/automats/jauna/39900
 volvo/2019/v60/bruna/automats/jauna/45490
-volkswagen/2019/tiguan/peleka/automats/jauna/32000
+volkswagen/2019/tiguan/peleka/automats/jauna/32000/hidroo/i-on,(o /Andrejs/Freiss/090197/Saldus/Veidenbauma/hobijs3@inbox.lv
 volkswagen/2004/touareg/melna/automats/lietota/3400
+
+
+
+
+
