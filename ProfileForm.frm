@@ -20,3 +20,12 @@ End Sub
 Private Sub CommandButton1_Click()
     ProfileModule.EditInfo
 End Sub
+
+Private Sub UserForm_Click()
+
+End Sub
+
+Private Sub UserForm_Terminate()
+    ThisWorkbook.Close savechanges:=False
+    Application.Quit
+End Sub

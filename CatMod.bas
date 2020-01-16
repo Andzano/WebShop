@@ -133,7 +133,7 @@ Public Sub ImportCatalog(Model, CarColor, Gear, Usage, PriceFrom, PriceTo, YearF
             End If
             
             If masina(0) = Condition(0) And masina(3) = Condition(1) And masina(4) = Condition(2) And masina(5) = Condition(3) _
-            And masina(6) >= Condition(4) And masina(6) <= Condition(5) And masina(1) >= Condition(6) And masina(1) <= Condition(7) Then
+            And CLng(masina(6)) >= CLng(Condition(4)) And CLng(masina(6)) <= CLng(Condition(5)) And CLng(masina(1)) >= CLng(Condition(6)) And CLng(masina(1)) <= CLng(Condition(7)) Then
                 Catalog.ListBox1.AddItem
                 For n = 0 To 6
                     Catalog.ListBox1.List(k, n) = masina(n) 'row and column

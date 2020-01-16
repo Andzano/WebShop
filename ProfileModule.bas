@@ -12,10 +12,10 @@ Public Sub Init()
         CarAndCustomer = Split(Line, "/")
         
         ArrayLenght = UBound(CarAndCustomer) - LBound(CarAndCustomer) + 1
-        If ArrayLenght <> 15 Then
+        If ArrayLenght <> 13 Then
             GoTo NextIteration
         Else
-            If CarAndCustomer(7) <> GlobalUserData(0) Then
+            If CarAndCustomer(7) <> GlobalUserData(2) Then
                 GoTo NextIteration
             End If
         End If

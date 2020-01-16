@@ -9,10 +9,10 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = True
 'Upon opening Book1, hides Excel window and opens UserForm1
 
-'Private Sub Workbook_Open()
-    'Application.Visible = False
-    'UserForm1.Show vbModeless
-'End Sub
+Private Sub Workbook_Open()
+    Application.Visible = False
+    LoginForm.Show vbModeless
+End Sub
 
 'Private Sub Workbook_Open()
 '    UserForm1.Show vbModeless

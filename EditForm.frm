@@ -1,10 +1,10 @@
 VERSION 5.00
 Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} EditForm 
    Caption         =   "Edit"
-   ClientHeight    =   7320
+   ClientHeight    =   6675
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   8295.001
+   ClientWidth     =   4875
    OleObjectBlob   =   "EditForm.frx":0000
    StartUpPosition =   1  'CenterOwner
 End
@@ -23,4 +23,13 @@ End Sub
 
 Private Sub CommandButton3_Click()
     EditModule.BackToCatalog
+End Sub
+
+Private Sub UserForm_Click()
+
+End Sub
+
+Private Sub UserForm_Terminate()
+    ThisWorkbook.Close savechanges:=False
+    Application.Quit
 End Sub

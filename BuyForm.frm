@@ -21,3 +21,12 @@ End Sub
 Private Sub ConfirmButton_Click()
     BuyModule.Purchase
 End Sub
+
+Private Sub UserForm_Click()
+
+End Sub
+
+Private Sub UserForm_Terminate()
+    ThisWorkbook.Close savechanges:=False
+    Application.Quit
+End Sub

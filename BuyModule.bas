@@ -1,5 +1,5 @@
 Attribute VB_Name = "BuyModule"
-
+ 
 Public Sub Init()
 
 Catalog.CatalogMessage.Caption = ""
@@ -19,7 +19,7 @@ Catalog.CatalogMessage.Caption = ""
  Next i
  
  
- For i = 8 To 11
+ For i = 8 To 13
     BuyForm.Controls("TextBox" & i) = GlobalUserData(i - 6)
  Next i
  

@@ -70,3 +70,8 @@ Private Sub UserForm_Initialize()
     'Add data to list
 '    CatMod.Init
 End Sub
+
+Private Sub UserForm_Terminate()
+    ThisWorkbook.Close savechanges:=False
+    Application.Quit
+End Sub

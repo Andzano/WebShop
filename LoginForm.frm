@@ -14,30 +14,12 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
-' Testa funckijas
-'Private Sub UserForm_Initialize()
-'    Application.Visible = False
-'    End Sub
-'Private Sub UserForm_Terminate()
-'    Application.Visible = True
-'End Sub
-
 Private Sub CommandButton1_Click()
     'Calls Login Sub in Login Modules
     Login.Login
 End Sub
 
 Private Sub CommandButton2_Click()
-'    RegisterForm.Username = ""
-'    RegisterForm.Password = ""
-'    RegisterForm.RPassword = ""
-'    RegisterForm.PersonName = ""
-'    RegisterForm.Surname = ""
-'    RegisterForm.PerosonalCode = ""
-'    RegisterForm.City = ""
-'    RegisterForm.Address = ""
-'    RegisterForm.Email = ""
-
     Register.Register
 End Sub
 
@@ -47,4 +29,9 @@ End Sub
 
 Private Sub OptionButton2_Click()
     Lang.Latvian
+End Sub
+
+Private Sub UserForm_Terminate()
+ThisWorkbook.Close savechanges:=False
+    Application.Quit
 End Sub
